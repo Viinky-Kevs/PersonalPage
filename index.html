@@ -9,17 +9,7 @@
     <link rel="shortcut icon" href="images/icon.ico" type="image/png" sizes="96x96">
 </head>
 <body>
-    <nav class="navbar">
-        <div class="nav-item">
-            <a href="#banner" class="nav-link">Banner</a>
-            <span class="nav-panel">Home</span>
-        </div>
-        <div class="nav-item">
-            <a href="#footer" class="nav-link">Banner</a>
-            <span class="nav-panel">Information</span>
-        </div>
-    </nav>
-    <div class="banner" id="banner">
+    <div class="banner" id="banner" data-label="Home">
         <header class="init">
             <a href="#" class="logo">Kevs</a>
             <div class="toggle"></div>
@@ -52,6 +42,16 @@
             </div>
         </div>    
     </div>
+    <nav class="navbar">
+        <div class="nav-item">
+            <a href="#banner" class="nav-link"></a>
+            <span class="nav-panel">Home</span>
+        </div>
+        <div class="nav-item">
+            <a href="#footer" class="nav-link"></a>
+            <span class="nav-panel">Information</span>
+        </div>
+    </nav>
     <footer class="footer" id="footer">
         <br>
         <div class="container">
@@ -78,6 +78,7 @@
         </div>
         <br>
     </footer>
+    <script src="script.js"></script>
     <script src="skrollr.js"></script>
     <script type="text/javascript">
         var s = skrollr.init();

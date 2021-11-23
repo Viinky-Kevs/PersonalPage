@@ -1,26 +1,38 @@
-var slideIndex = 1;
-showSlides(slideIndex);
+function activateNavigation() {
+    const sections = document.querySelectorAll(".section");
+    const navContainer = document.createElement("navbar");
+    const navItems = Array.from(sections).map((section) => {
+        return `
+                    <div class="nav-item" data-for-section="${section.id}">
+                        <a href="#${section.id}" class="nav-link"></a>
+                        <span class="nav-label">${section.dataset.label}</span>
+                    </div>
+                `;
+    });
 
-function plusSlides(n) {
-    showSlides(slideIndex += n);
+    navContainer.classList.add("navbar");
+    navContainer.innerHTML = navItems.join("");
+
+    const observer = new IntersectionObserver(
+        (entries) => {
+            document.querySelectorAll(".nav-link").forEach((navLink) => {
+                navLink.classList.remove("nav-link-selected");
+            });
+
+            const visibleSection = entries.filter((entry) => entry.isIntersecting)[0];
+
+            document
+                .querySelector(
+                    `.nav-item[data-for-section="${visibleSection.target.id}"] .nav-link`
+                )
+                .classList.add("nav-link-selected");
+        },
+        { threshold: 0.5 }
+    );
+
+    sections.forEach((section) => observer.observe(section));
+
+    document.body.appendChild(navContainer);
 }
 
-function currentSlide(n) {
-    showSlides(slideIndex = n);
-}
-
-function showSlides(n) {
-    var i;
-    var slides = document.getElementsByClassName("mySlides");
-    var dots = document.getElementsByClassName("dot");
-    if (n > slides.length) { slideIndex = 1 }
-    if (n < 1) { slideIndex = slides.length }
-    for (i = 0; i < slides.length; i++) {
-        slides[i].style.display = "none";
-    }
-    for (i = 0; i < dots.length; i++) {
-        dots[i].className = dots[i].className.replace(" active", "");
-    }
-    slides[slideIndex - 1].style.display = "block";
-    dots[slideIndex - 1].className += " active";
-}
+activateNavigation();

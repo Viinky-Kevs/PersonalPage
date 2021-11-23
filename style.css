@@ -17,12 +17,44 @@ body {
 }
 
 .navbar {
-    --nav-gap: 15px;
-    padding: var(--nav-gap);
-    position: fixed;
-    right: 0;
-    top: 50%;
-    transform: translateY(-50%);
+  --nav-gap: 15px;
+  padding: var(--nav-gap);
+  position: fixed;
+  right: 0;
+  top: 50%;
+  transform: translateY(-30%);
+}
+
+.nav-item {
+  align-items: center;
+  display: flex;
+  flex-direction: row-reverse;
+  margin-bottom: var(--nav-gap);
+}
+
+.nav-link:hover ~ .nav-label {
+  opacity: 1;
+}
+
+.nav-label {
+  color: white;
+  font-weight: bold;
+  opacity: 0;
+  transition: opacity 0.1s;
+}
+
+.nav-link {
+  background: #1FBAD9;
+  border-radius: 50%;
+  height: var(--nav-gap);
+  margin-left: var(--nav-gap);
+  transition: transform 0.1s;
+  width: var(--nav-gap);
+}
+
+.nav-link-selected {
+  background: #1FBAD9;
+  transform: scale(1.4);
 }
 
 .banner {
