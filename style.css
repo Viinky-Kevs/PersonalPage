@@ -31,15 +31,10 @@ body {
 
 }
 
-.banner .content {
+.banner .container_home {
     position: relative;
-    max-width: 750px;
+    max-width: 700px;
     text-align: center;
-}
-
-.banner .content h1 {
-    font-size: 60px;
-    color: #1FBAD9;
 }
 
 .banner header {
@@ -54,11 +49,6 @@ body {
     z-index: 10000;
 }
 
-.banner img {
-    width: 30%;
-    border-radius: 15px;
-}
-
 .banner header .logo {
     color: #fff;
     text-decoration: none;
@@ -69,18 +59,44 @@ body {
     cursor: pointer;
 }
 
-.banner .content .frame{
+.banner .container_home .frame{
     position: absolute;
     height: 100%;
     width: 100%;
-    opacity: 0.3;
     transition: .3s ease;
-    background-color: transparent;
     top: 0;
     bottom: 0;
-    left: 0;
-    right: 0;
+    left: 500px;
+    right: 500px;   
 }
+
+.banner .container_home .frame .github,
+.banner .container_home .frame .linkedin,
+.banner .container_home .frame .facebook  {
+  background-color: #fff;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+}
+
+.banner .container_home img { 
+  display: block; 
+  margin-left: auto;
+  margin-right: auto;
+  width: 70%;
+  border-radius: 15px;
+}
+
+.banner .container_home img:hover {
+  opacity: 0.5;
+}
+
+.banner .container_home .frame i {
+  cursor: pointer;
+  font-size: 55px;
+  color: #1FBAD9;
+}
+
 .navbar {
   --nav-gap: 15px;
   padding: var(--nav-gap);
@@ -88,15 +104,6 @@ body {
   right: 0;
   top: 50%;
   transform: translateY(-30%);
-}
-
-.github {
-    position: absolute;
-    color: black;
-    font-size: 2rem;
-    cursor: pointer;
-    left: 50%;
-    bottom: 50%;
 }
 
 .nav-item {
