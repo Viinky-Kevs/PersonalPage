@@ -156,6 +156,7 @@ body {
     display: block;
     text-align: center;
     width: 100%;
+    top: 50px;
 }
 
 .info .contentinfo h1 {
@@ -164,6 +165,10 @@ body {
 
 .info .contentinfo p {
     font-size: 30px;
+}
+
+.info .languages {
+  top: -10px;
 }
 
 .container {
